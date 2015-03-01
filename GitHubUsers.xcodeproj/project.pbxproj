@@ -14,6 +14,7 @@
 		870CFDCA1AA327C400A4634B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 870CFDC91AA327C400A4634B /* Images.xcassets */; };
 		870CFDCD1AA327C400A4634B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870CFDCB1AA327C400A4634B /* LaunchScreen.xib */; };
 		870CFDD91AA327C400A4634B /* GitHubUsersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 870CFDD81AA327C400A4634B /* GitHubUsersTests.m */; };
+		870CFDE61AA3293A00A4634B /* GHUsersManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 870CFDE51AA3293A00A4634B /* GHUsersManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		870CFDD21AA327C400A4634B /* GitHubUsersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubUsersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		870CFDD71AA327C400A4634B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		870CFDD81AA327C400A4634B /* GitHubUsersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitHubUsersTests.m; sourceTree = "<group>"; };
+		870CFDE41AA3293A00A4634B /* GHUsersManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUsersManager.h; sourceTree = "<group>"; };
+		870CFDE51AA3293A00A4634B /* GHUsersManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUsersManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				870CFDC11AA327C400A4634B /* AppDelegate.m */,
 				870CFDC31AA327C400A4634B /* ViewController.h */,
 				870CFDC41AA327C400A4634B /* ViewController.m */,
+				870CFDE41AA3293A00A4634B /* GHUsersManager.h */,
+				870CFDE51AA3293A00A4634B /* GHUsersManager.m */,
 				870CFDC61AA327C400A4634B /* Main.storyboard */,
 				870CFDC91AA327C400A4634B /* Images.xcassets */,
 				870CFDCB1AA327C400A4634B /* LaunchScreen.xib */,
@@ -222,6 +227,7 @@
 				870CFDC51AA327C400A4634B /* ViewController.m in Sources */,
 				870CFDC21AA327C400A4634B /* AppDelegate.m in Sources */,
 				870CFDBF1AA327C400A4634B /* main.m in Sources */,
+				870CFDE61AA3293A00A4634B /* GHUsersManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
