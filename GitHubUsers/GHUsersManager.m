@@ -14,6 +14,7 @@ NSString * const kGitHugAPIURL = @"https://api.github.com/users";
 
 @interface GHUsersManager ()
 
+@property (nonatomic, assign) BOOL isRequested;
 @property (nonatomic, strong) NSArray *userList;
 
 @end
@@ -30,8 +31,13 @@ NSString * const kGitHugAPIURL = @"https://api.github.com/users";
 }
 
 - (void)reloadUserList {
-    // TODO: add isReloadStarted
-    // TDOD: move it to startLoad method
+    if (!self.isRequested) {
+        [self startRequest];
+    }
+}
+
+- (void)startRequest {
+    self.isRequested = YES;
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kGitHugAPIURL]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue new] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (!connectionError) {
@@ -54,6 +60,7 @@ NSString * const kGitHugAPIURL = @"https://api.github.com/users";
         [userList addObject:newUser];
     }
     self.userList = userList;
+    self.isRequested = NO;
     [self performSelectorOnMainThread:@selector(postNotification) withObject:nil waitUntilDone:NO];
 }
 

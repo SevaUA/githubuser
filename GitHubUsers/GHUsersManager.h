@@ -12,6 +12,7 @@ extern NSString * const GHUsersManagerUserListUpdated;
 
 @interface GHUsersManager : NSObject
 
+@property (nonatomic, readonly) BOOL isRequested;
 @property (nonatomic, readonly) NSArray* userList;
 
 + (id)sharedManager;
