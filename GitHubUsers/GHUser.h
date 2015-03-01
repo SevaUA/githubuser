@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+@class GHUser;
+typedef void (^ImageBlock)(UIImage *image);
 
 @interface GHUser : NSObject
 
@@ -15,5 +19,7 @@
 @property (nonatomic, strong) NSString *login;
 @property (nonatomic, strong) NSString *htmlUrl;
 @property (nonatomic, strong) NSString *avatarUrl;
+
+- (void)avatarImageWithBlock:(ImageBlock)imageBlock;
 
 @end

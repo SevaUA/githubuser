@@ -32,18 +32,36 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GHUserCellIdentifier" forIndexPath:indexPath];
+    GHUserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:GHUserCellReuseIdentifier forIndexPath:indexPath];
+    cell.delegate = self;
     GHUser *user = [self userForIndexPath:indexPath];
-    cell.textLabel.text = user.login;
-    cell.detailTextLabel.text = user.htmlUrl;
+    cell.loginLabel.text = user.login;
+    cell.urlLabel.text = user.htmlUrl;
+    cell.avatarImage = nil;
+    [user avatarImageWithBlock:^(UIImage *image) {
+        if ([user.login isEqual:cell.loginLabel.text]) {
+            cell.avatarImage = image;
+        }
+    }];
     
     return cell;
+}
+
+#pragma mark - GHUserTableViewCellTapProtocol
+
+- (void)userUrlClicked:(UITableViewCell *)onCell {
+    GHUser *user = [self userForIndexPath:[self.tableView indexPathForCell:onCell]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:user.htmlUrl]];
+}
+
+- (void)avatarClicked:(UITableViewCell *)onCell {
+    GHUser *user = [self userForIndexPath:[self.tableView indexPathForCell:onCell]];
+    // TODO: add avatar click action
 }
 
 #pragma mark - Table view private methods
 
 - (void)userListUpdated {
-    NSLog(@"count = %lu", [[[GHUsersManager sharedManager] userList] count]);
     [self.tableView reloadData];
 }
 

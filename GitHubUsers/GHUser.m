@@ -12,6 +12,12 @@ NSString* const kGHUserKeyLogin = @"login";
 NSString* const kGHUserKeyAvatarUrl = @"avatar_url";
 NSString* const kGHUserKeyHtmlUrl = @"html_url";
 
+@interface GHUser ()
+
+@property (nonatomic, strong) UIImage *avatarImage;
+
+@end
+
 @implementation GHUser
 
 + (GHUser *)userWithDictionary:(NSDictionary *)dictionary {
@@ -24,6 +30,26 @@ NSString* const kGHUserKeyHtmlUrl = @"html_url";
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"GHUser: %@", self.login];
+}
+
+- (void)avatarImageWithBlock:(ImageBlock)imageBlock {
+    if (self.avatarImage) {
+        imageBlock(self.avatarImage);
+        return;
+    }
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.avatarUrl]];
+        if (imgData) {
+            UIImage *image = [UIImage imageWithData:imgData];
+            if (image) {
+                dispatch_async(dispatch_get_main_queue(), ^(void){
+                    self.avatarImage = image;
+                    imageBlock(image);
+                });
+            }
+        }
+
+    });
 }
 
 @end

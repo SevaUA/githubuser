@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GHUserTableViewCell.h"
 
-@interface GHUsersTableViewController : UITableViewController
+@interface GHUsersTableViewController : UITableViewController <GHUserTableViewCellTapProtocol>
 
 @end
