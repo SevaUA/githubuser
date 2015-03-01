@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HLU-X5-H1M">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Users Table View Controller-->
@@ -52,6 +53,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kdm-Jk-pgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="246" y="31"/>
+        </scene>
+        <!--User Detail View Controller-->
+        <scene sceneID="TJC-nM-JPj">
+            <objects>
+                <viewController storyboardIdentifier="GHUserDetailViewControllerID" id="Lgy-II-pGk" customClass="GHUserDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wRY-ge-bRi"/>
+                        <viewControllerLayoutGuide type="bottom" id="wi6-LX-BVo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zrq-KX-RWs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h70-ys-5lM">
+                                <rect key="frame" x="538" y="28" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="8XY-5j-ipk"/>
+                                    <constraint firstAttribute="height" constant="30" id="mI0-vA-A8Q"/>
+                                </constraints>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Wv-yd-eEF">
+                                <rect key="frame" x="100" y="100" width="400" height="400"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="VS0-ly-VCH"/>
+                                    <constraint firstAttribute="height" constant="400" id="asG-eD-s3N"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="8Wv-yd-eEF" secondAttribute="centerY" id="6Iu-jG-5j5"/>
+                            <constraint firstAttribute="centerX" secondItem="8Wv-yd-eEF" secondAttribute="centerX" id="FhI-ou-2a5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h70-ys-5lM" secondAttribute="trailing" constant="6" id="bCB-7F-3wW"/>
+                            <constraint firstItem="h70-ys-5lM" firstAttribute="top" secondItem="wRY-ge-bRi" secondAttribute="bottom" constant="8" id="bf7-Jv-Dno"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="h70-ys-5lM" id="VZK-nI-D5x"/>
+                        <outlet property="imageView" destination="8Wv-yd-eEF" id="M0Q-4F-bEt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FiN-RU-xLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="242" y="845"/>
         </scene>
     </scenes>
 </document>
