@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const GHUsersManagerUserListUpdated;
+
 @interface GHUsersManager : NSObject
 
 @property (nonatomic, readonly) NSArray* userList;

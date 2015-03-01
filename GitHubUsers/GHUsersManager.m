@@ -7,8 +7,16 @@
 //
 
 #import "GHUsersManager.h"
+#import "GHUser.h"
 
-NSString* const kGitHugAPIURL = @"https://api.github.com/users";
+NSString * const GHUsersManagerUserListUpdated = @"GHUsersManagerUserListUpdated";
+NSString * const kGitHugAPIURL = @"https://api.github.com/users";
+
+@interface GHUsersManager ()
+
+@property (nonatomic, strong) NSArray *userList;
+
+@end
 
 @implementation GHUsersManager
 
@@ -35,8 +43,22 @@ NSString* const kGitHugAPIURL = @"https://api.github.com/users";
 - (void)processResponseData:(NSData *)data response:(NSURLResponse *)response {
     NSArray *ghUserList = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
     if ([NSJSONSerialization isValidJSONObject:ghUserList]) {
-        NSLog(@"valid json");
+        [self createUserModelsWithJSON:ghUserList];
     }
+}
+
+- (void)createUserModelsWithJSON:(NSArray *)jsonArray {
+    NSMutableArray *userList = [NSMutableArray new];
+    for (NSDictionary *userDict in jsonArray) {
+        GHUser *newUser = [GHUser userWithDictionary:userDict];
+        [userList addObject:newUser];
+    }
+    self.userList = userList;
+    [self performSelectorOnMainThread:@selector(postNotification) withObject:nil waitUntilDone:NO];
+}
+
+- (void)postNotification {
+    [[NSNotificationCenter defaultCenter] postNotificationName:GHUsersManagerUserListUpdated object:nil];
 }
 
 @end
