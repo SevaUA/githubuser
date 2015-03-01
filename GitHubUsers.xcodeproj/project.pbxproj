@@ -17,6 +17,7 @@
 		870CFDE91AA331DB00A4634B /* GHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 870CFDE81AA331DB00A4634B /* GHUser.m */; };
 		870CFDEC1AA345B900A4634B /* GHUsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 870CFDEB1AA345B900A4634B /* GHUsersTableViewController.m */; };
 		870CFDEF1AA34CF900A4634B /* GHUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 870CFDEE1AA34CF900A4634B /* GHUserTableViewCell.m */; };
+		870CFDF21AA3805800A4634B /* GHUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 870CFDF11AA3805800A4634B /* GHUserDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		870CFDEB1AA345B900A4634B /* GHUsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUsersTableViewController.m; sourceTree = "<group>"; };
 		870CFDED1AA34CF900A4634B /* GHUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUserTableViewCell.h; sourceTree = "<group>"; };
 		870CFDEE1AA34CF900A4634B /* GHUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUserTableViewCell.m; sourceTree = "<group>"; };
+		870CFDF01AA3805800A4634B /* GHUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUserDetailViewController.h; sourceTree = "<group>"; };
+		870CFDF11AA3805800A4634B /* GHUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUserDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				870CFDC11AA327C400A4634B /* AppDelegate.m */,
 				870CFDEA1AA345B900A4634B /* GHUsersTableViewController.h */,
 				870CFDEB1AA345B900A4634B /* GHUsersTableViewController.m */,
+				870CFDF01AA3805800A4634B /* GHUserDetailViewController.h */,
+				870CFDF11AA3805800A4634B /* GHUserDetailViewController.m */,
 				870CFDED1AA34CF900A4634B /* GHUserTableViewCell.h */,
 				870CFDEE1AA34CF900A4634B /* GHUserTableViewCell.m */,
 				870CFDE41AA3293A00A4634B /* GHUsersManager.h */,
@@ -238,6 +243,7 @@
 				870CFDEF1AA34CF900A4634B /* GHUserTableViewCell.m in Sources */,
 				870CFDC21AA327C400A4634B /* AppDelegate.m in Sources */,
 				870CFDBF1AA327C400A4634B /* main.m in Sources */,
+				870CFDF21AA3805800A4634B /* GHUserDetailViewController.m in Sources */,
 				870CFDE61AA3293A00A4634B /* GHUsersManager.m in Sources */,
 				870CFDE91AA331DB00A4634B /* GHUser.m in Sources */,
 			);
@@ -430,6 +436,7 @@
 				870CFDDE1AA327C400A4634B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		870CFDDF1AA327C400A4634B /* Build configuration list for PBXNativeTarget "GitHubUsersTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +445,7 @@
 				870CFDE11AA327C400A4634B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

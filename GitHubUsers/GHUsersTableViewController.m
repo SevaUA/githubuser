@@ -9,6 +9,7 @@
 #import "GHUsersTableViewController.h"
 #import "GHUsersManager.h"
 #import "GHUser.h"
+#import "GHUserDetailViewController.h"
 
 @interface GHUsersTableViewController ()
 
@@ -56,7 +57,10 @@
 
 - (void)avatarClicked:(UITableViewCell *)onCell {
     GHUser *user = [self userForIndexPath:[self.tableView indexPathForCell:onCell]];
-    // TODO: add avatar click action
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    GHUserDetailViewController *vc = (GHUserDetailViewController *)[storyboard instantiateViewControllerWithIdentifier:@"GHUserDetailViewControllerID"];
+    vc.user = user;
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 #pragma mark - Table view private methods
